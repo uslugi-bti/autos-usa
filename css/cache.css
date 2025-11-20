@@ -15406,3 +15406,17 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     right: .5em;
     top: 0
 }
+
+.frame,
+.form-wrapper {
+    border-radius: 40px;
+}
+
+.button-wrapper a,
+.button-wrapper button {
+    border-radius: 15px;
+}
+
+input[type=submit] {
+    border-radius: 15px;
+}

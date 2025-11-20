@@ -1189,4 +1189,175 @@
 
 </body>
 
+<script>
+    // Инициализация AOS с настройками для плавных анимаций
+    AOS.init({
+        duration: 800, // Продолжительность анимации
+        easing: 'ease-in-out', // Тип плавности
+        once: true, // Анимация срабатывает только один раз
+        offset: 100, // Запуск анимации до того, как элемент появится в viewport
+        delay: 100, // Задержка перед началом анимации
+        mirror: false, // Анимация не повторяется при скролле назад
+    });
+
+    // Добавляем классы для анимации элементам, у которых их нет
+    document.addEventListener('DOMContentLoaded', function() {
+        // Анимация для заголовков
+        const titles = document.querySelectorAll('h1, h2, h3, .title');
+        titles.forEach(title => {
+            if (!title.hasAttribute('data-aos')) {
+                title.setAttribute('data-aos', 'fade-up');
+            }
+        });
+
+        // Анимация для текстовых блоков
+        const textBlocks = document.querySelectorAll('.text, .seo-block p, .questions_category p');
+        textBlocks.forEach(text => {
+            if (!text.hasAttribute('data-aos')) {
+                text.setAttribute('data-aos', 'fade-up');
+                text.setAttribute('data-aos-delay', '200');
+            }
+        });
+
+        // Анимация для иконок
+        const icons = document.querySelectorAll('.icon, .service-item .icon');
+        icons.forEach(icon => {
+            if (!icon.hasAttribute('data-aos')) {
+                icon.setAttribute('data-aos', 'zoom-in');
+                icon.setAttribute('data-aos-delay', '100');
+            }
+        });
+
+        // Анимация для кнопок
+        const buttons = document.querySelectorAll('.red-button, .red-transparent-button, .submit-wrapper');
+        buttons.forEach(button => {
+            if (!button.hasAttribute('data-aos')) {
+                button.setAttribute('data-aos', 'fade-up');
+                button.setAttribute('data-aos-delay', '300');
+            }
+        });
+
+        // Анимация для форм
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            if (!form.hasAttribute('data-aos')) {
+                form.setAttribute('data-aos', 'fade-up');
+                form.setAttribute('data-aos-delay', '400');
+            }
+        });
+
+        // Анимация для шагов
+        const steps = document.querySelectorAll('.step');
+        steps.forEach((step, index) => {
+            if (!step.hasAttribute('data-aos')) {
+                step.setAttribute('data-aos', 'fade-right');
+                step.setAttribute('data-aos-delay', index * 100);
+            }
+        });
+
+        // Анимация для элементов карусели услуг
+        const serviceItems = document.querySelectorAll('.service-item');
+        serviceItems.forEach((item, index) => {
+            if (!item.hasAttribute('data-aos')) {
+                item.setAttribute('data-aos', 'flip-left');
+                item.setAttribute('data-aos-delay', index * 150);
+            }
+        });
+
+        // Анимация для вопросов FAQ
+        const faqQuestions = document.querySelectorAll('.faq_question');
+        faqQuestions.forEach((question, index) => {
+            if (!question.hasAttribute('data-aos')) {
+                question.setAttribute('data-aos', 'fade-up');
+                question.setAttribute('data-aos-delay', index * 50);
+            }
+        });
+
+        // Анимация для контактов в футере
+        const contacts = document.querySelectorAll('.contacts a');
+        contacts.forEach((contact, index) => {
+            if (!contact.hasAttribute('data-aos')) {
+                contact.setAttribute('data-aos', 'fade-up');
+                contact.setAttribute('data-aos-delay', index * 100);
+            }
+        });
+
+        // Анимация для карты
+        const map = document.getElementById('map-canvas');
+        if (map && !map.hasAttribute('data-aos')) {
+            map.setAttribute('data-aos', 'zoom-in');
+        }
+
+        // Анимация для навигационного меню
+        const menuItems = document.querySelectorAll('.menu li');
+        menuItems.forEach((item, index) => {
+            if (!item.hasAttribute('data-aos')) {
+                item.setAttribute('data-aos', 'fade-down');
+                item.setAttribute('data-aos-delay', index * 50);
+            }
+        });
+
+        // Анимация для логотипа
+        const logo = document.querySelector('.logo-wrapper');
+        if (logo && !logo.hasAttribute('data-aos')) {
+            logo.setAttribute('data-aos', 'fade-right');
+        }
+
+        // Анимация для телефона в хедере
+        const phone = document.querySelector('.callback-wrapper');
+        if (phone && !phone.hasAttribute('data-aos')) {
+            phone.setAttribute('data-aos', 'fade-left');
+        }
+    });
+
+    // Переинициализация AOS после загрузки всех изображений
+    window.addEventListener('load', function() {
+        AOS.refresh();
+    });
+</script>
+
+<style>
+    /* Дополнительные стили для улучшения анимаций */
+    [data-aos] {
+        pointer-events: none;
+    }
+    
+    [data-aos].aos-animate {
+        pointer-events: auto;
+    }
+    
+    /* Плавный скролл для всей страницы */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Улучшение внешнего вида во время анимации */
+    .easyshop_item_thumb {
+        transition: transform 0.3s ease;
+    }
+    
+    .easyshop_item_thumb:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Анимация для иконок социальных сетей */
+    .icons a {
+        transition: all 0.3s ease;
+    }
+    
+    .icons a:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Анимация для кнопок */
+    .red-button, .red-transparent-button {
+        transition: all 0.3s ease !important;
+    }
+    
+    .red-button:hover, .red-transparent-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+
 </html>
