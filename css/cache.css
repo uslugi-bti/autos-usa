@@ -4980,7 +4980,7 @@ a.filter-params {
 }
 
 .webp #rollin-cars-usa {
-    background: url('../img/banner-cars-usa.webp') 0 0 no-repeat
+    background: url('../img/banner-cars-usa.webp') no-repeat center / contain !important;
 }
 
 .usa-cars .frame {
