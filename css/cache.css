@@ -15420,3 +15420,400 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 input[type=submit] {
     border-radius: 15px;
 }
+
+/* Базовые стили для анимированных элементов */
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.anim.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.anim-no-repeat.active {
+    animation-fill-mode: forwards;
+}
+
+/* Анимация fadeIn */
+.anim-fadeIn {
+    opacity: 0;
+}
+
+.anim-fadeIn.active {
+    opacity: 1;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Анимация fadeInUp */
+.anim-fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.anim-fadeInUp.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация fadeInDown */
+.anim-fadeInDown {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.anim-fadeInDown.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация fadeInLeft */
+.anim-fadeInLeft {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.anim-fadeInLeft.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInLeft 0.8s ease;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация fadeInRight */
+.anim-fadeInRight {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.anim-fadeInRight.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInRight 0.8s ease;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация zoomIn */
+.anim-zoomIn {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.anim-zoomIn.active {
+    opacity: 1;
+    transform: scale(1);
+    animation: zoomIn 0.6s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация slideInUp */
+.anim-slideInUp {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.anim-slideInUp.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInUp 0.8s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация slideInDown */
+.anim-slideInDown {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.anim-slideInDown.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInDown 0.8s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация slideInLeft */
+.anim-slideInLeft {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.anim-slideInLeft.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInLeft 0.8s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация slideInRight */
+.anim-slideInRight {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.anim-slideInRight.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInRight 0.8s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация bounceIn */
+.anim-bounceIn {
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+.anim-bounceIn.active {
+    opacity: 1;
+    transform: scale(1);
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация rotateIn */
+.anim-rotateIn {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.anim-rotateIn.active {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+    animation: rotateIn 0.8s ease;
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Анимация pulse */
+.anim-pulse {
+    opacity: 0;
+}
+
+.anim-pulse.active {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Анимация flipInX */
+.anim-flipInX {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+}
+
+.anim-flipInX.active {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0);
+    animation: flipInX 0.8s ease;
+}
+
+@keyframes flipInX {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateX(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0);
+    }
+}
+
+/* Анимация lightSpeedIn */
+.anim-lightSpeedIn {
+    opacity: 0;
+    transform: translateX(100%) skewX(-30deg);
+}
+
+.anim-lightSpeedIn.active {
+    opacity: 1;
+    transform: translateX(0) skewX(0);
+    animation: lightSpeedIn 0.8s ease;
+}
+
+@keyframes lightSpeedIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%) skewX(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) skewX(0);
+    }
+}
+
+/* Анимация staggerFadeIn для групповых элементов */
+.anim-staggerFadeIn > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.anim-staggerFadeIn.active > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Задержки для последовательной анимации */
+.anim[style*="animation-delay"] {
+    animation-delay: inherit;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .anim {
+        transition: all 0.4s ease;
+    }
+    
+    .anim-fadeInUp,
+    .anim-fadeInDown,
+    .anim-slideInUp,
+    .anim-slideInDown {
+        transform: translateY(20px);
+    }
+    
+    .anim-fadeInLeft,
+    .anim-fadeInRight,
+    .anim-slideInLeft,
+    .anim-slideInRight {
+        transform: translateX(20px);
+    }
+}
