@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .select2-container {
     box-sizing: border-box;
     display: inline-block;
@@ -3625,6 +3629,7 @@ h2.f41 {
     background-color: #000;
     width: 300px;
     left: -300px;
+    height: 100%;
     transition: left 0.4s ease-in 0s;
     z-index: 20
 }
@@ -9011,7 +9016,7 @@ a.pagebar_page,
     }
 
     .webp .usa-cars .top_block {
-        background: url(/templates/nnauto/images/banner-fg-usa.webp) 60% 0 no-repeat
+        background: url('../img/banner-fg-usa.webp') 60% 0 no-repeat
     }
 
     .no-webp .europe-cars .top_block {
@@ -10499,7 +10504,7 @@ a.pagebar_page,
     }
 
     .webp .usa-cars .top_block {
-        background: url(/templates/nnauto/images/banner-fg-usa.webp) 60% 0 no-repeat
+        background: url('../img/banner-fg-usa.webp') 60% 0 no-repeat
     }
 
     .no-webp .cars-exchange .top_block {}
