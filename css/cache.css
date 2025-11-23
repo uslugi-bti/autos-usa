@@ -15424,18 +15424,16 @@ input[type=submit] {
 /* Базовые стили для анимированных элементов */
 .anim {
     opacity: 0;
-    transform: translateY(30px);
     transition: all 0.6s ease;
 }
 
 .anim.active {
     opacity: 1;
-    transform: translateY(0);
 }
 
-.anim-no-repeat.active {
+/*.anim-no-repeat.active {
     animation-fill-mode: forwards;
-}
+}*/
 
 /* Анимация fadeIn */
 .anim-fadeIn {
@@ -15447,32 +15445,16 @@ input[type=submit] {
     animation: fadeIn 0.8s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 /* Анимация fadeInUp */
 .anim-fadeInUp {
     opacity: 0;
-    transform: translateY(50px);
+    /*transform: translateY(50px);*/
 }
 
 .anim-fadeInUp.active {
     opacity: 1;
-    transform: translateY(0);
+    /*transform: translateY(0);*/
     animation: fadeInUp 0.8s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Анимация fadeInDown */
@@ -15487,17 +15469,6 @@ input[type=submit] {
     animation: fadeInDown 0.8s ease;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Анимация fadeInLeft */
 .anim-fadeInLeft {
     opacity: 0;
@@ -15510,38 +15481,20 @@ input[type=submit] {
     animation: fadeInLeft 0.8s ease;
 }
 
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 /* Анимация fadeInRight */
 .anim-fadeInRight {
     opacity: 0;
     transform: translateX(50px);
 }
 
+#rollin-cars-usa {
+    transition: all 0.5s ease 0.7s;
+}
+
 .anim-fadeInRight.active {
     opacity: 1;
     transform: translateX(0);
     animation: fadeInRight 0.8s ease;
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 /* Анимация zoomIn */
@@ -15556,17 +15509,6 @@ input[type=submit] {
     animation: zoomIn 0.6s ease;
 }
 
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 /* Анимация slideInUp */
 .anim-slideInUp {
     opacity: 0;
@@ -15577,17 +15519,6 @@ input[type=submit] {
     opacity: 1;
     transform: translateY(0);
     animation: slideInUp 0.8s ease;
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Анимация slideInDown */
@@ -15602,17 +15533,6 @@ input[type=submit] {
     animation: slideInDown 0.8s ease;
 }
 
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Анимация slideInLeft */
 .anim-slideInLeft {
     opacity: 0;
@@ -15623,17 +15543,6 @@ input[type=submit] {
     opacity: 1;
     transform: translateX(0);
     animation: slideInLeft 0.8s ease;
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 /* Анимация slideInRight */
@@ -15648,17 +15557,6 @@ input[type=submit] {
     animation: slideInRight 0.8s ease;
 }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 /* Анимация bounceIn */
 .anim-bounceIn {
     opacity: 0;
@@ -15669,24 +15567,6 @@ input[type=submit] {
     opacity: 1;
     transform: scale(1);
     animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    70% {
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* Анимация rotateIn */
@@ -15701,17 +15581,6 @@ input[type=submit] {
     animation: rotateIn 0.8s ease;
 }
 
-@keyframes rotateIn {
-    from {
-        opacity: 0;
-        transform: rotate(-90deg) scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
-}
-
 /* Анимация pulse */
 .anim-pulse {
     opacity: 0;
@@ -15720,18 +15589,6 @@ input[type=submit] {
 .anim-pulse.active {
     opacity: 1;
     animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 /* Анимация flipInX */
@@ -15746,17 +15603,6 @@ input[type=submit] {
     animation: flipInX 0.8s ease;
 }
 
-@keyframes flipInX {
-    from {
-        opacity: 0;
-        transform: perspective(400px) rotateX(90deg);
-    }
-    to {
-        opacity: 1;
-        transform: perspective(400px) rotateX(0);
-    }
-}
-
 /* Анимация lightSpeedIn */
 .anim-lightSpeedIn {
     opacity: 0;
@@ -15767,17 +15613,6 @@ input[type=submit] {
     opacity: 1;
     transform: translateX(0) skewX(0);
     animation: lightSpeedIn 0.8s ease;
-}
-
-@keyframes lightSpeedIn {
-    from {
-        opacity: 0;
-        transform: translateX(100%) skewX(-30deg);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0) skewX(0);
-    }
 }
 
 /* Анимация staggerFadeIn для групповых элементов */
@@ -15815,5 +15650,166 @@ input[type=submit] {
     .anim-slideInLeft,
     .anim-slideInRight {
         transform: translateX(20px);
+    }
+}
+
+/* Стили для блока отзывов */
+.reviews-section {
+    background-color: #f7f7f7;
+    padding: 70px 0;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: 41px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    color: #1c1c1c;
+}
+
+.reviews-carousel .review-item {
+    padding: 0 15px;
+}
+
+.review-content {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #282828;
+    margin-bottom: 25px;
+    font-style: italic;
+    position: relative;
+}
+
+.review-text:before {
+    content: '"';
+    font-size: 60px;
+    color: #ef1313;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.review-author {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 20px;
+}
+
+.author-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1c1c1c;
+    margin-bottom: 5px;
+}
+
+.author-car {
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+/* Стили для видео блока */
+.video-section {
+    padding: 70px 0;
+    background-color: #222222;
+    color: white;
+}
+
+.video-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.video-wrapper {
+    flex: 1;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    flex: 1;
+}
+
+.video-info h2 {
+    font-size: 41px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.video-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.video-features {
+    margin-top: 25px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.video-features li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.video-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ef1313;
+    font-weight: bold;
+}
+
+.reviews-section .owl-nav {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .video-content {
+        flex-direction: column;
+    }
+    
+    .reviews-section h2,
+    .video-info h2 {
+        font-size: 30px;
+    }
+    
+    .review-content {
+        padding: 20px;
     }
 }

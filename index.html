@@ -251,7 +251,7 @@
                                         </div>
                                     </div>
 
-                                    <div id="rollin-cars-usa"></div>
+                                    <div id="rollin-cars-usa" class="anim anim-no-repeat anim-fadeInDown"></div>
                                 </div>
                             </div>
 
@@ -721,6 +721,156 @@
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Добавляем после блока с вопросами (перед servicescarouselmodule) -->
+
+                <!-- Блок с отзывами -->
+                <div class="reviews-section anim anim-no-repeat anim-fadeIn">
+                    <div class="wrapper">
+                        <h2 class="anim anim-no-repeat anim-fadeInDown">ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h2>
+                        <div class="owl-carousel reviews-carousel">
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Отличный сервис! Заказал доставку автомобиля из США, всё прошло гладко. 
+                                        Машина пришла в идеальном состоянии, даже лучше чем ожидал. 
+                                        Особенно порадовала детальная проверка перед покупкой."
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Андрей Коваленко</div>
+                                        <div class="author-car">Volkswagen Touareg 2018</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Очень профессиональный подход. Менеджеры постоянно на связи, 
+                                        отвечали на все вопросы. Автомобиль доставили точно в срок, 
+                                        все документы оформили правильно. Буду рекомендовать друзьям!"
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Марина Петренко</div>
+                                        <div class="author-car">Toyota Camry 2020</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Сэкономил около 30% по сравнению с покупкой в Украине. 
+                                        Качество машины превзошло ожидания - американские авто действительно 
+                                        в отличном состоянии. Спасибо за честную работу и прозрачные условия!"
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Сергей Иванов</div>
+                                        <div class="author-car">Ford Explorer 2019</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Отличный сервис! Заказал доставку автомобиля из США, всё прошло гладко. 
+                                        Машина пришла в идеальном состоянии, даже лучше чем ожидал. 
+                                        Особенно порадовала детальная проверка перед покупкой."
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Андрей Коваленко</div>
+                                        <div class="author-car">Volkswagen Touareg 2018</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Очень профессиональный подход. Менеджеры постоянно на связи, 
+                                        отвечали на все вопросы. Автомобиль доставили точно в срок, 
+                                        все документы оформили правильно. Буду рекомендовать друзьям!"
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Марина Петренко</div>
+                                        <div class="author-car">Toyota Camry 2020</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item anim anim-no-repeat anim-zoomIn">
+                                <div class="review-content">
+                                    <div class="review-text">
+                                        "Сэкономил около 30% по сравнению с покупкой в Украине. 
+                                        Качество машины превзошло ожидания - американские авто действительно 
+                                        в отличном состоянии. Спасибо за честную работу и прозрачные условия!"
+                                    </div>
+                                    <div class="review-author">
+                                        <div class="author-name">Сергей Иванов</div>
+                                        <div class="author-car">Ford Explorer 2019</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Инициализация слайдера отзывов
+                    $(document).ready(function() {
+                        $(".reviews-carousel").owlCarousel({
+                            items: 1,
+                            loop: true,
+                            autoplay: true,
+                            autoplayTimeout: 8000,
+                            autoplaySpeed: 1000,
+                            nav: true,
+                            navText: [
+                                "<img src='img/btn-left.png' alt='left' width='41' height='41'>",
+                                "<img src='img/btn-right.png' alt='right' width='41' height='41'>"
+                            ],
+                            dots: true,
+                            responsive: {
+                                0: {
+                                    items: 1
+                                },
+                                768: {
+                                    items: 2
+                                },
+                                1200: {
+                                    items: 3
+                                }
+                            }
+                        });
+                    });
+                </script>
+
+                <!-- Видео блок -->
+                <div class="video-section anim anim-no-repeat anim-fadeIn">
+                    <div class="wrapper">
+                        <div class="video-content">
+                            <div class="video-wrapper anim anim-no-repeat anim-fadeInLeft">
+                                <div class="video-container">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                            title="Процесс доставки авто из США" frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="video-info anim anim-no-repeat anim-fadeInRight">
+                                <h2>КАК МЫ РАБОТАЕМ</h2>
+                                <div class="video-description">
+                                    <p>Посмотрите видео о нашем процессе работы - от подбора автомобиля 
+                                    на американских аукционах до доставки и оформления в Украине.</p>
+                                    <ul class="video-features">
+                                        <li>Профессиональный подбор авто по вашим критериям</li>
+                                        <li>Детальная проверка истории и состояния</li>
+                                        <li>Участие в аукционах с максимальной выгодой</li>
+                                        <li>Организация доставки и таможенного оформления</li>
+                                        <li>Полное сопровождение до постановки на учет</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="module" data-moduleid="103">

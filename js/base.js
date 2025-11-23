@@ -76,11 +76,6 @@ $(document).ready(function(){
     //$('.mp-top').jqueryScrollAnimate({direction:true,  distance: 2000, animated:'.ani' });
     //$('.whycomf').jqueryScrollAnimate({direction:true,  distance: 100, animated:'.ani' });
 
-    AOS.init({
-        duration: 500,
-        disable: 'mobile'
-    });
-
     adapate();
 
 
