@@ -1237,6 +1237,308 @@
                 })
             </script>
 
+            <!-- Пульсирующая кнопка телефона -->
+            <div class="floating-phone-btn" onclick="openPhoneModal()">
+                <div class="phone-btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.1 15.3C18.9 15.3 17.7 15.1 16.6 14.8C16.1 14.7 15.6 14.8 15.2 15.1L13.2 16.8C10.4 15.5 8.5 13.6 7.2 10.8L8.9 8.8C9.3 8.4 9.4 7.9 9.3 7.4C9 6.3 8.8 5.1 8.8 3.9C8.8 3.3 8.3 2.8 7.7 2.8H4.6C3.9 2.8 3.4 3.3 3.4 3.9C3.4 13.4 10.6 20.6 20.1 20.6C20.7 20.6 21.2 20.1 21.2 19.5V16.4C21.2 15.8 20.7 15.3 20.1 15.3Z"/>
+                    </svg>
+                </div>
+                <div class="phone-btn-ring"></div>
+                <div class="phone-btn-ring phone-btn-ring-2"></div>
+            </div>
+
+            <!-- Модальное окно для телефона -->
+            <div class="phone-modal-window" id="phoneModal">
+                <div class="modal-phone-content">
+                    <div class="modal-phone-header">
+                        <h3>Свяжитесь с нами</h3>
+                        <span class="close-phone-modal" onclick="closePhoneModal()">×</span>
+                    </div>
+                    <div class="phone-modal-numbers">
+                        <a href="tel:+380681112233" class="phone-modal-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ef1313" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.1 15.3C18.9 15.3 17.7 15.1 16.6 14.8C16.1 14.7 15.6 14.8 15.2 15.1L13.2 16.8C10.4 15.5 8.5 13.6 7.2 10.8L8.9 8.8C9.3 8.4 9.4 7.9 9.3 7.4C9 6.3 8.8 5.1 8.8 3.9C8.8 3.3 8.3 2.8 7.7 2.8H4.6C3.9 2.8 3.4 3.3 3.4 3.9C3.4 13.4 10.6 20.6 20.1 20.6C20.7 20.6 21.2 20.1 21.2 19.5V16.4C21.2 15.8 20.7 15.3 20.1 15.3Z"/>
+                            </svg>
+                            068 111 22 33
+                        </a>
+                        <div class="callback-modal-form">
+                            <h4>Заказать обратный звонок</h4>
+                            <input type="text" placeholder="Ваше имя" id="callbackName">
+                            <input type="tel" placeholder="Ваш телефон" id="callbackPhone">
+                            <button class="callback-modal-btn" onclick="requestCallback()">Позвоните мне</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+            .floating-phone-btn {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #ef1313, #ff4444);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 4px 20px rgba(239, 19, 19, 0.4);
+                z-index: 1000;
+                transition: all 0.3s ease;
+                animation: phoneBtnFloat 3s ease-in-out infinite;
+            }
+
+            .floating-phone-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 25px rgba(239, 19, 19, 0.6);
+            }
+
+            .phone-btn-icon {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .phone-btn-ring {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 2px solid #ef1313;
+                border-radius: 50%;
+                animation: phoneBtnPulse 2s linear infinite;
+                opacity: 0;
+            }
+
+            .phone-btn-ring-2 {
+                animation-delay: 1s;
+            }
+
+            @keyframes phoneBtnPulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1.5);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes phoneBtnFloat {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .phone-modal-window {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 1001;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modal-phone-content {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                max-width: 400px;
+                width: 90%;
+                position: relative;
+                animation: modalPhoneAppear 0.3s ease;
+            }
+
+            @keyframes modalPhoneAppear {
+                from {
+                    opacity: 0;
+                    transform: scale(0.8) translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1) translateY(0);
+                }
+            }
+
+            .modal-phone-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #f0f0f0;
+                padding-bottom: 15px;
+            }
+
+            .modal-phone-header h3 {
+                margin: 0;
+                color: #2c3e50;
+                font-size: 1.4em;
+            }
+
+            .close-phone-modal {
+                font-size: 30px;
+                cursor: pointer;
+                color: #7f8c8d;
+                transition: color 0.3s ease;
+            }
+
+            .close-phone-modal:hover {
+                color: #ef1313;
+            }
+
+            .phone-modal-numbers {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .phone-modal-link {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 15px 20px;
+                background: #f8f9fa;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #2c3e50;
+                font-size: 1.2em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .phone-modal-link:hover {
+                background: #ef1313;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(239, 19, 19, 0.3);
+            }
+
+            .callback-modal-form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .callback-modal-form h4 {
+                margin: 0 0 10px 0;
+                color: #2c3e50;
+                font-size: 1.1em;
+            }
+
+            .callback-modal-form input {
+                padding: 12px 15px;
+                border: 2px solid #ecf0f1;
+                border-radius: 8px;
+                font-size: 14px;
+                transition: border-color 0.3s ease;
+            }
+
+            .callback-modal-form input:focus {
+                outline: none;
+                border-color: #ef1313;
+            }
+
+            .callback-modal-btn {
+                padding: 12px 20px;
+                background: #ef1313;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .callback-modal-btn:hover {
+                background: #d11212;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(239, 19, 19, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                .floating-phone-btn {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                .phone-btn-icon {
+                    width: 25px;
+                    height: 25px;
+                }
+                
+                .modal-phone-content {
+                    margin: 20px;
+                    padding: 20px;
+                }
+            }
+            </style>
+
+            <script>
+            function openPhoneModal() {
+                document.getElementById('phoneModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePhoneModal() {
+                document.getElementById('phoneModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            function requestCallback() {
+                const name = document.getElementById('callbackName').value;
+                const phone = document.getElementById('callbackPhone').value;
+                
+                if (!name || !phone) {
+                    alert('Пожалуйста, заполните все поля');
+                    return;
+                }
+                
+                alert(`Спасибо, ${name}! Мы перезвоним вам на номер ${phone} в ближайшее время.`);
+                closePhoneModal();
+                
+                document.getElementById('callbackName').value = '';
+                document.getElementById('callbackPhone').value = '';
+            }
+
+            document.getElementById('phoneModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePhoneModal();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePhoneModal();
+                }
+            });
+
+            setTimeout(function() {
+                if (!localStorage.getItem('phoneModalShown')) {
+                    openPhoneModal();
+                    localStorage.setItem('phoneModalShown', 'true');
+                }
+            }, 30000);
+            </script>
+
 </body>
 
 </html>
